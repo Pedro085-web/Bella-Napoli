@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon_io (4)/favicon.ico" type="image/x-icon">
+    <title>Contato</title>
+<style>
+    form{background-color: #ddd;
+    align-content: center;
+align-items: center;
+text-align: center;
+border-radius: 5px;
+margin-left: 555px;
+margin-right: 555px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+button{ margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #c0392b ;
+    color: white;
+    cursor: pointer;}
+    button:hover{background-color: #871b00;}
+    .btn2{margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        background-color: #c0392b ;
+        color: white;
+        cursor: pointer;margin-left: 718px;
+        margin-right: 555px;}
+</style>
+</head>
+<body>
+    <form action="/submit-form" method="post">
+     
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+    
+     
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+    
+        
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+        <br><br>
+    
+      
+        <a href="#"><button type="submit">Enviar</button></a>
+      </form>
+      <a href="./index.html"><button class="btn2">Voltar</button></a>
+</body>
+</html>

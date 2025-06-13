@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #c0392b;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    font-size: 24px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #f1c40f;
+}
+
+/* Conteúdo principal */
+.main {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.main h2 {
+    color: #c0392b;
+    margin-bottom: 20px;
+}
+
+.main p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #333;
+    font-size: 18px;
+}
+
+/* Footer */
+.footer {
+    background-color: #c0392b;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+img{width: 390px;
+height: 340px;
+border-radius: 5px;}
+ol{font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+background-color: #e4d3bf;
+list-style: none;
+padding-left: 0;}
+button{background-color:#c0392b ;
+color: white;
+    width: 150px;
+height: 80px;}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+tr:nth-child(even) {
+    background-color: hsl(0, 0%, 100%);}
+    .container {
+      display: flex;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .itens, .carrinho {
+      border: 1px solid #674545;
+      padding: 20px;
+      width: 300px;
+    }
+
+    .item, .carrinho-item {
+      cursor: pointer;
+      margin-bottom: 8px;
+      padding: 5px;
+      transition: background 0.2s;
+    }
+
+    .item:hover, .carrinho-item:hover {
+      background-color: #d0cfcf;
+    }
+
+    h3 {
+      margin-top: 0;
+      color: #cd1500;
+    }
+
+    small {
+      font-size: 0.8em;
+      color: #777;
+    }
+
+    button:hover{background-color: #871b00;
+    color: #f1c40f;}

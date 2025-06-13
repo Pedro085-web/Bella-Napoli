@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css.css">
+  <link rel="shortcut icon" href="./favicon_io (4)/favicon.ico" type="image/x-icon">
+  <title>Carrinho de Compras</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .main {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .itens, .carrinho {
+      background-color: white;
+      padding: 20px;
+      flex: 1;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      cursor: pointer;
+      margin: 8px 0;
+      padding: 5px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    li:hover {
+      background-color: #eee;
+    }
+
+    .total {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background-color: #c0392b ;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #871b00;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="container">
+      <div class="itens">
+        <h3>Sabores disponíveis:</h3>
+        <ul id="lista-itens">
+          <h4>Salgadas</h4>
+          <li class="item" data-preco="35.00">Pizza Calabresa</li>
+          <li class="item" data-preco="38.00">Pizza Frango com Catupiry</li>
+          <li class="item" data-preco="40.00">Pizza Quatro Queijos</li>
+          <h4>Bebidas</h4>
+          <li class="item" data-preco="8.00">Refrigerante</li>
+          <li class="item" data-preco="10.00">Suco Natural</li>
+        </ul>
+        <small>* Clique para adicionar ao carrinho</small>
+      </div>
+
+      <div class="carrinho">
+        <h3>Carrinho:</h3>
+        <ul id="carrinho-lista">
+         
+        </ul>
+        <div class="total">Total: R$ <span id="total">0.00</span></div>
+        <small>* Clique em um item para removê-lo</small>
+      </div>
+    </div>
+    <a href="index.html"><button>Voltar</button></a>
+  </div>
+
+  <script>
+    const itens = document.querySelectorAll('.item');
+    const carrinhoLista = document.getElementById('carrinho-lista');
+    const totalSpan = document.getElementById('total');
+    let total = 0;
+
+    function atualizarTotal(valor) {
+      total += valor;
+      totalSpan.textContent = total.toFixed(2);
+    }
+
+    itens.forEach(item => {
+      item.addEventListener('click', () => {
+        const preco = parseFloat(item.getAttribute('data-preco'));
+        const novoItem = document.createElement('li');
+        novoItem.textContent = item.textContent + ` - R$ ${preco.toFixed(2)}`;
+        novoItem.setAttribute('data-preco', preco);
+        novoItem.classList.add('carrinho-item');
+
+        novoItem.addEventListener('click', () => {
+          const precoRemover = parseFloat(novoItem.getAttribute('data-preco'));
+          carrinhoLista.removeChild(novoItem);
+          atualizarTotal(-precoRemover);
+        });
+
+        carrinhoLista.appendChild(novoItem);
+        atualizarTotal(preco);
+      });
+    });
+  </script>
+</body>
+</html>
